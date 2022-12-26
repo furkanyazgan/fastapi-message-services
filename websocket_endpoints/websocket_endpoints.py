@@ -11,15 +11,15 @@ class WebsocketEndpointsClass:
 
 
     def endpoints(self):
-        @self.app.websocket("/harem")
+        @self.app.websocket("/services")
         async def websocket_endpoint(websocket: WebSocket):
-            await self.manager.connect(websocket, channel="harem")
+            await self.manager.connect(websocket, channel="services")
             try:
                 while True:
 
                     message  = await websocket.receive_text()
                     print(message)
-                    await self.manager.send_message(websocket_referance=websocket,message=message,channel="harem")
+                    await self.manager.send_message(websocket_referance=websocket,message=message,channel="services")
 
 
             except WebSocketDisconnect:                

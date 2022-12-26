@@ -6,7 +6,7 @@ class HttpEndpointsClass:
         self.endpoints()
 
     def endpoints(self):
-        @self.app.get("/harem")
+        @self.app.get("/services")
         async def http_endpoint():
 
             return {"data": "merhaba nasılsın"}
