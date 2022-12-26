@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from dotenv import load_dotenv
+
 
 
 from http_endpoints.http_endpoints import HttpEndpointsClass
@@ -9,7 +9,7 @@ from managers.websocket_manager import WebsocketManagerClass
 
 from websocket_endpoints.websocket_endpoints import WebsocketEndpointsClass
 
-load_dotenv()
+
 
 app = FastAPI()
 
