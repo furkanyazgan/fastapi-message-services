@@ -20,6 +20,7 @@ class  WebsocketManagerClass:
             self.channelList[channel] = []
         self.channelList[channel].append([websocket,username])
         await self.send_personal_message("Hoşgeldin "+username, websocket=websocket)
+        await self.send_message(websocket_referance=websocket,message="<-Sunucuya katıldı. ",channel="services")
 
     def disconnect(self, websocket: WebSocket):
         self.active_connections.remove(websocket)
